@@ -6,7 +6,7 @@ var options = {
     path: '/'
 };
 
-var req = http.get(options, function(res){
+var req = http.get(options, function(res){  //GET방식!!!
     //응답 처리
     var resData = '';
     res.on('data', function(chunk){
