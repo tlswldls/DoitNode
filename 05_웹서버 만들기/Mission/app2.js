@@ -33,6 +33,7 @@ var app = express();
 
 //클라이언트에서 ajax로 요청 시 CORS(다중 서버 접속) 지원
 var cors = require('cors');
+const { stringify } = require('querystring');
 
 // 기본 속성 설정
 app.set('port', process.env.PORT || 3000);
@@ -82,6 +83,8 @@ var upload = multer({
 // 라우터 객체 참조
 var router = express.Router();
 
+
+
 // 라우팅 함수 등록// 파일 업로드 라우팅 함수 - 로그인 후 세션 저장함
 router.route('/process/memo_with_image').post(upload.array('photo', 1), function(req, res) {
 	console.log('/process/memo_with_image 처리함.');
@@ -128,7 +131,7 @@ router.route('/process/memo_with_image').post(upload.array('photo', 1), function
 		res.write('<br>');
 		res.write('<div><p>메모가 저장되었습니다.</p></div>');
 		res.write('<div><p>서버에 저장된 사진</p></div>');
-		res.write('<img src="uploads/'+filename+'" alt="My Image">')
+		res.write('<img alt="My Image" src="../uploads/'+filename + ' " width="200px" />');
 		res.write('<div><p>'+ originalname +'</p></div>');
 		res.write("<br><br>");
     	res.write("<button><a href='/public/memo with image.html'>다시 작성</a></button>");
