@@ -165,9 +165,9 @@ router.route('/process/adduser').post(function(req, res) {
 			if (addedUser) {
 				console.dir(addedUser);
 
-				console.log('inserted ' + result.affectedRows + ' rows');
+				console.log('inserted ' + addUser.affectedRows + ' rows');
 	        	
-	        	var insertId = result.insertId;
+	        	var insertId = addUser.insertId;
 	        	console.log('추가한 레코드의 아이디 : ' + insertId);
 	        	
 				res.writeHead('200', {'Content-Type':'text/html;charset=utf8'});
