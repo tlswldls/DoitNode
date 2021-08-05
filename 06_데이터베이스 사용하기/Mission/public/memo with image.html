@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>로그인 테스트</title>
+	</head>
+<body>
+	<h1>나의 메모</h1>
+	<br>
+	<form method="post" enctype="multipart/form-data" action="/process/memo_with_image">
+		<table>
+			<tr>
+				<td><label>작성자</label></td>
+				<td><input type="text" name="id" /></td>
+			</tr>
+			<tr>
+				<td><label>작성 일시</label></td>
+				<td><input type="datetime-local" name="date" /></td>
+			</tr>
+			<tr>
+				<td><label>내용</label></td>
+				<td><input type="text" name="contents" /></td>
+			</tr>
+			<tr>
+				<td><label>파일</label></td>
+				<td><input type="file" name="photo" /></td>
+			</tr>
+		</table>
+		<input type="submit" value="저장" name=""/>
+		<input type="submit" value="닫기" name=""/>
+	</form>
+</body>
+</html>
